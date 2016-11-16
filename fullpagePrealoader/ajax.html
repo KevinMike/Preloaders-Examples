@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery ajax-loading.js Plugin Demos</title>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue-red.min.css" />
+</head>
+
+<body>
+<div class="mdl-grid" style="max-width:960px; margin-top:150px;">
+    <div class="mdl-cell mdl-cell--3-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="startAjax()">
+        AJAX Loading
+    </button></div>
+    <div class="mdl-cell mdl-cell--3-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="openLoading()">
+        Open
+    </button></div>
+    <div class="mdl-cell mdl-cell--3-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="closeLoading()">
+        Close
+    </button></div>
+    <div class="mdl-cell mdl-cell--3-col"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="openLoading(3000)">
+        Auto dismiss
+    </button></div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/ajax-loading.js"></script>
+<script type="text/javascript">
+    var loading = $.loading();
+
+    function startAjax() {
+        $.get('http://www.google.com', function () {
+        });
+    }
+
+    function openLoading(time) {
+        loading.open(time);
+    }
+
+    function closeLoading() {
+        loading.close();
+    }
+
+</script>body
+</body>
+</html>
